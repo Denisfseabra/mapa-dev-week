@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;800&display=swap');
+
+body{
+    font-family: 'Public sans', sans-serif
+}
+
+/* o asterisco serve para estilizar todos os elementos html da página */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* LOGO */
+
+/* LOGO */
+
+.logo .imagem{
+    width: 100px;
+}
+
+.logo{
+    display: flex; /*deixa os elementos um do lado do outro*, consultar site css-tricks para mais variações do display flex*/
+    /* flex-direction: column; - caso eu quisesse que colocar o display flex em coluna */
+    align-items: center;
+    text-transform: uppercase; /*colocar texto em caixa alta*/
+}
+
+.logo .titulo{
+    margin-left: 7px;
+    font-size: 17px;
+    transition: 0.3s ease-in-out; /*suvidade no hover*/
+    font-weight: 800;
+}
+.logo .titulo:hover{
+    color: #1ED760;
+}
+
+/* CABEÇALHO */
+
+
+
+.cabecalho{
+    display: flex;
+    justify-content: space-between; /*vai dar um espaçamento entre os elementos*/
+    align-items: center; /*alinha o conteúdo ao centro verticamente*/
+    padding: 25px 0; /* 25px encima e enbaixo, e 0 nas laterais*/
+    max-width: 1170px;
+    margin: 0 auto; /*vai colocar o cabeçalho no meio*/
+    flex-wrap: wrap; /*quando ñ tiver mais espaço, ele vai quebrar pra baixo*/
+}
+
+@media(max-width: 624px){
+    .cabecalho{
+        justify-content: center;
+    }
+
+    .cabecalho .logo{
+        margin-bottom: 30px;
+    }
+
+    .cabecalho .menu .item a{
+        font-size: calc(0.6em + 1vw);
+    }
+}
+
+
+
+.cabecalho .menu{
+    display: flex;
+
+}
+
+.cabecalho .navegacao .menu .item{
+    margin: 10px;
+
+}
+
+.cabecalho .navegacao .menu .item a{
+    padding: 15px;
+    transition: 0.3s ease-in-out;
+
+
+}
+
+.cabecalho .navegacao .menu .item a:hover{
+    background-color: #1ED760;
+    color: white; 
+
+}
+
+/* CABEÇALHO */
+
+/* PAINEL */
+
+.conteudo-principal .paineis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    position: relative; /*para que eu consiga posicionar um elemento que tá dentro de uma div, essa div tem que ter um position relative*/
+    
+}
+
+@media(max-width: 900px){
+    .conteudo-principal .paineis{
+        height: 500px;
+    }
+}
+
+.conteudo-principal .paineis .imagem-painel{
+    background-repeat: no-repeat;
+    background-size: cover; /* cover vai cobrir todo tamanho da div */
+    background-position: center;
+    min-width: 100%; /* largura mínima */
+    height: 100%;
+    position: absolute; /*position absolute deve estar sempre dentro de uma div(pai) relativa*/
+    z-index: -1; /*faz o texto vir pra frente da imagem*/
+    filter: brightness(70%); 
+
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.conteudo-principal .paineis .projeto1{
+    background-image: url('../img/imagens/painel1.jpg'); /*../ significa voltar uma pasta*/
+}
+
+.conteudo-principal .paineis .projeto2{
+    background-image: url('../img/imagens/painel1.jpg');
+}
+
+.conteudo-principal .paineis .projeto3{
+    background-image: url('../img/imagens/painel1.jpg');
+}
+
+.conteudo-principal .paineis .imagem-painel.mostrar{
+    opacity: 1;
+}
+
+
+.conteudo-principal .paineis .titulo{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: cal(1em+1vw); /*calcula automaticamente o tamanho da fonte de acordo com o tamanho da tela. Bom para responsividade*/
+}
+
+.conteudo-principal .paineis .seta{
+    background-image: url('../img/imagens/seta.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /*imagem se adequa a uma altura e largura*/
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    text-indent: 100%; /*junto do "overflow: hidden", esconde um texto de um elemento*/
+    overflow: hidden;
+    
+}
+
+.conteudo-principal .paineis .seta.btn-voltar{
+    left: 20px;
+    transform: rotateY(180deg);
+
+}
+
+.conteudo-principal .paineis .seta.btn-avancar{
+    right: 20px;
+    
+}
+
+/* PAINEL */
+
+/* QUEM SOMOS */
+
+.quem-somos{
+    background-color: #2941AB;
+}
+
+.quem-somos .conteudo{
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+
+
+
+.quem-somos .conteudo .informacoes{
+    width: 40%;
+}
+
+.quem-somos .conteudo .imagem{
+    width: 60%;
+}
+
+.quem-somos .conteudo .informacoes .titulo{
+    font-size: 50px;
+    color: #1ED760;
+    margin-bottom: 20px;
+}
+
+.quem-somos .conteudo .informacoes .texto{
+    font-size: 20px;
+    line-height: 1.5; /*altura das linhas*/
+    color: #fff;
+    font-weight: 400;
+}
+
+@media(max-width: 1200px){
+    .quem-somos .conteudo{
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 30px;
+    }
+
+    .quem-somos .conteudo .imagem{
+        display: none;
+    }
+
+    .quem-somos .conteudo .informacoes{
+        width: 100%;
+    }   
+
+}
+
+/* QUEM SOMOS */
+
+/* RODAPÉ */
+
+.rodape{
+    padding: 80px 0 20px 0;
+
+}
+
+.rodape .navegacao{
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /*quebra pra baixo*/
+}
+
+.rodape .redes-sociais{
+    display: flex;
+}
+
+.rodape .redes-sociais a{
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    font-size: 30px;
+    border: 1px solid #111;
+    border-radius: 50%;
+    padding: 15px;
+    width: 65px; 
+    transition: 0.3s ease-in-out;
+}
+
+.rodape .redes-sociais a:hover{
+    background-color: #1ED760;
+}
+
+
+.rodape .navegacao .logo .imagem{
+    width: 100px;
+}
+
+.rodape .copyright{
+    margin-top: 70px;
+    text-align: center;
+}
+
+@media(max-width: 940px){
+    .rodape .navegacao{
+        justify-content: center;
+    }
+
+    .rodape .navegacao .logo{
+        margin-bottom: 30px;
+    }
+
+    .rodape .navegacao .logo,
+    .rodape .navegacao .redes-sociais{
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* RODAPÉ */
